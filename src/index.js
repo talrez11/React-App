@@ -1,20 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+const Book = ({title, author, pages}) => {
+    return (
+        <section>
+            <h2>{title}</h2>
+            <p>Author: {author}</p>
+            <p>Page: {pages}</p>
+        </section>
+    )
+};
 
-class Message extends React.Component {
-    render() {
-        return(
-          <div>
-              <h1 style={{color: this.props.color}}>
-                  {this.props.msg}
-              </h1>
-          </div>
-        );
-    }
-}
+const Library = () => {
+    return (
+        <div>
+            <Book title='The sun rise' author='T.Vegas' pages={345} />
+            <Book title='Magic Sppon' author='M.R.C yellow' pages={145} />
+            <Book title='Splinter' author='Jenny nooe' pages={915} />
+        </div>
+    )
+};
 
 ReactDOM.render(
-    <Message color='blue' msg='Hello, How are you?'/>,
+    <Library/>,
     document.getElementById('root')
 );
